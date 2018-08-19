@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bigdata.iml" filepath="$PROJECT_DIR$/bigdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multithread/multithread.iml" filepath="$PROJECT_DIR$/multithread/multithread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc.iml" filepath="$PROJECT_DIR$/rpc/rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" filepath="$PROJECT_DIR$/rpc/rpc-client/rpc-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-common/rpc-common.iml" filepath="$PROJECT_DIR$/rpc/rpc-common/rpc-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-register/rpc-register.iml" filepath="$PROJECT_DIR$/rpc/rpc-register/rpc-register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-server/rpc-server.iml" filepath="$PROJECT_DIR$/rpc/rpc-server/rpc-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-server-start/rpc-server-start.iml" filepath="$PROJECT_DIR$/rpc/rpc-server-start/rpc-server-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc-user/rpc-user.iml" filepath="$PROJECT_DIR$/rpc/rpc-user/rpc-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper/zookeeper.iml" />
+    </modules>
+  </component>
+</project>

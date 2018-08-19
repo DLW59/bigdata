@@ -1,0 +1,8 @@
+2018-08-19 14:55:01.961 [restartedMain] INFO  com.dlw.bigdata.RpcServerRunApplication - Starting RpcServerRunApplication on XZ2FUQ7ISPZTM0F with PID 5044 (H:\idea\workspace\bigdata\rpc\rpc-server-run\target\classes started by Administrator in H:\idea\workspace\bigdata)
+2018-08-19 14:55:01.965 [restartedMain] INFO  com.dlw.bigdata.RpcServerRunApplication - No active profile set, falling back to default profiles: default
+2018-08-19 14:55:02.040 [restartedMain] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3ba93584: startup date [Sun Aug 19 14:55:02 CST 2018]; root of context hierarchy
+2018-08-19 14:55:03.239 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-19 14:55:03.282 [restartedMain] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-19 14:55:03.305 [restartedMain] INFO  com.dlw.bigdata.RpcServerRunApplication - Started RpcServerRunApplication in 2.277 seconds (JVM running for 3.081)
+2018-08-19 14:55:03.313 [Thread-9] INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@3ba93584: startup date [Sun Aug 19 14:55:02 CST 2018]; root of context hierarchy
+2018-08-19 14:55:03.317 [Thread-9] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
