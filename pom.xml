@@ -24,6 +24,7 @@
         <module>zookeeper</module>
         <module>multithread</module>
         <module>rpc</module>
+        <module>hadoop</module>
     </modules>
     <dependencies>
         <dependency>
