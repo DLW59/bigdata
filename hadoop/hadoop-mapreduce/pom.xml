@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hadoop-hdfs</artifactId>
+    <artifactId>hadoop-mapreduce</artifactId>
 
+    <dependencies>
+    </dependencies>
 </project>
