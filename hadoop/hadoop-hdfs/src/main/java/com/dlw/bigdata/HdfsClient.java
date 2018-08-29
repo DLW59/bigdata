@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @author dlw
@@ -31,7 +33,7 @@ public class HdfsClient {
     private static final String URI = "hdfs://hadoop01:9000";
     private void getFileSystem() throws Exception {
         conf = new Configuration();
-        conf.set("dfs.replication","5");//配置副本数  代码优先级最高
+//        conf.set("dfs.replication","5");//配置副本数  代码优先级最高
 //        conf.set("fs.defaultFS", "hdfs://hadoop01:9000");
 //        fileSystem = FileSystem.get(conf);//默认获取一个本地文件系统
         fileSystem = FileSystem.get(new URI(URI),conf,HADOOP_USER_NAME);//最后一个参数为用户名
@@ -42,6 +44,16 @@ public class HdfsClient {
 //        hdfsClient.mkdir();
 //        hdfsClient.upload();
 //        hdfsClient.remove();
+        hdfsClient.printConf();
+    }
+
+    public void printConf() {
+        Iterator<Map.Entry<String, String>> it = conf.iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, String> next = it.next();
+            log.info(next.getKey() + ":" + next.getValue());
+
+        }
     }
 
     /**
