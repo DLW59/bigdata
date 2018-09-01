@@ -13,4 +13,7 @@
 
     <dependencies>
     </dependencies>
+    <build>
+        <finalName>mapreduce</finalName>
+    </build>
 </project>

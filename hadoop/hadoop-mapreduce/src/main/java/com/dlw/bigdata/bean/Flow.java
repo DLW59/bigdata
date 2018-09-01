@@ -1,9 +1,6 @@
 package com.dlw.bigdata.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
@@ -18,7 +15,6 @@ import java.io.IOException;
  */
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class Flow implements WritableComparable<Flow>{
     /**
      * 上行流量
@@ -32,6 +28,12 @@ public class Flow implements WritableComparable<Flow>{
      * 总流量
      */
     private long total;
+
+    private Flow() {}
+
+    public static Flow newInstance() {
+        return new Flow();
+    }
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeLong(up);
