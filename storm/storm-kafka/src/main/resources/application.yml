@@ -1,0 +1,43 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: storm-kafka
+  datasource:
+    username: root
+    password: 123456
+    #schema: classpath:init.sql
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://192.168.1.100:3306/storm?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&autoReconnect=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      schema: classpath:init.sql
+  kafka:
+    template:
+      default-topic: test   #默认topic
+    producer:
+      bootstrap-servers: @kafka.producer.servers@
+    consumer:
+      bootstrap-servers: @kafka.consumer.servers@
+      group-id: cgroup
+    listener:
+      concurrency: 3
+
+  #redis配置
+  redis:
+    port: 6379
+    password:
+    host: 192.168.1.100
+    database: 1
+#zk配置
+zookeeper:
+  hosts: @zookeeper.hosts@
+  port: @zookeeper.port@
+
+#storm配置
+storm:
+  brokerZkAddr: ${zookeeper.hosts}
+logging:
+  level:
+    storm: info
+  config: classpath:logback-spring.xml

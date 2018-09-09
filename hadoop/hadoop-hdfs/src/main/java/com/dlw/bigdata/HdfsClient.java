@@ -44,11 +44,11 @@ public class HdfsClient {
         HdfsClient hdfsClient = new HdfsClient();
         hdfsClient.getFileSystem();
 //        hdfsClient.mkdir();
-//        hdfsClient.upload();
+        hdfsClient.upload();
 //        hdfsClient.ioUpload();
 //        hdfsClient.remove();
 //        hdfsClient.printConf();
-        hdfsClient.testCat();
+//        hdfsClient.testCat();
     }
 
     public void printConf() {
@@ -65,12 +65,12 @@ public class HdfsClient {
      * 创建目录
      */
     private void mkdir() throws Exception {
-        boolean exists = fileSystem.exists(new Path("/demo"));
+        boolean exists = fileSystem.exists(new Path("/cache/input"));
         if (exists) {
             log.info("目录已经存在");
             return;
         }
-        boolean b = fileSystem.mkdirs(new Path("/demo"));
+        boolean b = fileSystem.mkdirs(new Path("/cache/input"));
         if (b) {
             log.info("在HDFS系统创建目录成功");
         }else {
@@ -82,7 +82,7 @@ public class HdfsClient {
      * 上传文件到HDFS
      */
     private void upload() throws Exception {
-        fileSystem.copyFromLocalFile(new Path("G:\\学习资料\\1\\a\\tuoyi.mp4"), new Path("hdfs://hadoop01:9000/"));
+        fileSystem.copyFromLocalFile(new Path("G:\\hadoop\\input\\product.txt"), new Path("hdfs://hadoop01:9000/cache/input"));
     }
 
     /**
