@@ -26,6 +26,7 @@
         <module>rpc</module>
         <module>hadoop</module>
         <module>storm</module>
+        <module>netty</module>
     </modules>
     <dependencies>
         <dependency>

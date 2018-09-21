@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 
 
 /**
@@ -49,7 +48,7 @@ public class AutoLoad implements ApplicationListener<ContextRefreshedEvent> {
             //实例化topologyBuilder类。
             TopologyBuilder topologyBuilder = new TopologyBuilder();
             //设置喷发节点并分配并发数，该并发数将会控制该对象在集群中的线程数。
-//            BrokerHosts brokerHosts = new ZkHosts(BROKERZKADDR);
+            BrokerHosts brokerHosts = new ZkHosts(BROKERZKADDR);
             // 配置Kafka订阅的Topic，以及zookeeper中数据节点目录和名字
 //            SpoutConfig spoutConfig = new SpoutConfig(brokerHosts, TOPIC,
 //                    "/storm", "1");
@@ -70,10 +69,10 @@ public class AutoLoad implements ApplicationListener<ContextRefreshedEvent> {
             */
             config.setNumWorkers(1);
             //本地模式
-            LocalCluster cluster = new LocalCluster();
-            cluster.submitTopology("myTopology", config, topologyBuilder.createTopology());
+//            LocalCluster cluster = new LocalCluster();
+//            cluster.submitTopology("myTopology", config, topologyBuilder.createTopology());
             //集群模式
-//            StormSubmitter.submitTopology("myTopology", config, topologyBuilder.createTopology());
+            StormSubmitter.submitTopology("myTopology", config, topologyBuilder.createTopology());
         } catch (Exception e) {
             e.printStackTrace();
         }

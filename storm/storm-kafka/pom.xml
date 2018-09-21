@@ -19,7 +19,7 @@
                 <kafka.consumer.servers>localhost:9092</kafka.consumer.servers>
                 <zookeeper.hosts>localhost</zookeeper.hosts>
                 <zookeeper.port>2181</zookeeper.port>
-                <storm.brokerZkAddr>localhost</storm.brokerZkAddr>
+                <storm.brokerZkAddr>localhost:2181</storm.brokerZkAddr>
             </properties>
             <activation>
                 <!-- 设置默认激活这个配置 -->
@@ -34,7 +34,7 @@
                 <kafka.consumer.servers>hadoop02:9092,hadoop03:9092,hadoop04:9092</kafka.consumer.servers>
                 <zookeeper.hosts>hadoop02,hadoop03,hadoop04</zookeeper.hosts>
                 <zookeeper.port>2181</zookeeper.port>
-                <storm.brokerZkAddr>hadoop02,hadoop03,hadoop04</storm.brokerZkAddr>
+                <storm.brokerZkAddr>hadoop02:2181,hadoop03:2181,hadoop04:2181</storm.brokerZkAddr>
             </properties>
             <activation>
                 <!-- 设置默认激活这个配置 -->
