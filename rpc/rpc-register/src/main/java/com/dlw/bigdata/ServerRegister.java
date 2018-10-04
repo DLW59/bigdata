@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -27,7 +28,7 @@ public class ServerRegister {
     private String registerData;
     private ZooKeeper zooKeeper = null;
     private CountDownLatch latch = new CountDownLatch(1);
-    private ReentrantLock lock = new ReentrantLock();
+    private Lock lock = new ReentrantLock();
 
     public ServerRegister() {
     }
