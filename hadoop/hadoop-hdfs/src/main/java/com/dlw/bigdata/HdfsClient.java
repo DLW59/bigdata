@@ -4,7 +4,6 @@ package com.dlw.bigdata;
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
-import org.apache.hadoop.fs.permission.FsPermission;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,7 +31,7 @@ public class HdfsClient {
     FileSystem fileSystem = null;
     Configuration conf = null;
     private static final String HADOOP_USER_NAME = "hadoop";
-    private static final String URI = "hdfs://hadoop01:9000";
+    private static final String URI = "hdfs://hadoopname:9000";
     private void getFileSystem() throws Exception {
         conf = new Configuration();
 //        conf.set("dfs.replication","5");//配置副本数  代码优先级最高
@@ -44,8 +43,8 @@ public class HdfsClient {
         HdfsClient hdfsClient = new HdfsClient();
         hdfsClient.getFileSystem();
 //        hdfsClient.mkdir();
-        hdfsClient.upload();
-//        hdfsClient.ioUpload();
+//        hdfsClient.upload();
+        hdfsClient.ioUpload();
 //        hdfsClient.remove();
 //        hdfsClient.printConf();
 //        hdfsClient.testCat();
@@ -65,12 +64,12 @@ public class HdfsClient {
      * 创建目录
      */
     private void mkdir() throws Exception {
-        boolean exists = fileSystem.exists(new Path("/cache/input"));
+        boolean exists = fileSystem.exists(new Path("/demo/input"));
         if (exists) {
             log.info("目录已经存在");
             return;
         }
-        boolean b = fileSystem.mkdirs(new Path("/cache/input"));
+        boolean b = fileSystem.mkdirs(new Path("/demo/input"));
         if (b) {
             log.info("在HDFS系统创建目录成功");
         }else {
@@ -82,7 +81,7 @@ public class HdfsClient {
      * 上传文件到HDFS
      */
     private void upload() throws Exception {
-        fileSystem.copyFromLocalFile(new Path("G:\\hadoop\\input\\product.txt"), new Path("hdfs://hadoop01:9000/cache/input"));
+        fileSystem.copyFromLocalFile(new Path("E:\\大数据\\39天课件笔记\\day07\\day06的问题总结.txt"), new Path("hdfs://hadoopname:9000/demo/input"));
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.dlw.bigdata;
+package com.dlw.bigdata.zookeeper;
 
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;

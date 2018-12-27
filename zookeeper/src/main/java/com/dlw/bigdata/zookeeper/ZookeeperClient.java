@@ -1,9 +1,8 @@
-package com.dlw.bigdata;
+package com.dlw.bigdata.zookeeper;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

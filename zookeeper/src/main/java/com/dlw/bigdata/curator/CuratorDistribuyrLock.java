@@ -1,4 +1,4 @@
-package com.dlw.bigdata;
+package com.dlw.bigdata.curator;
 
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class CuratorDistribuyrLock {
 
-    private static String connectString = "192.168.52.130:2181,192.168.52.131:2181,192.168.52.132:2181";
+    private static String connectString = "192.168.1.130:2181,192.168.1.131:2181,192.168.1.132:2181";
     private static int sessionTimeout = 2000;
     private static final String parentNode = "/locks";
     public static void main(String[] args) throws Exception {

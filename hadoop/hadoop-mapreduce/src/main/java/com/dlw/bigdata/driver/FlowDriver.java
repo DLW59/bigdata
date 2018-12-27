@@ -54,6 +54,7 @@ public class FlowDriver {
         //指定本程序的jar包所在的本地路径
         job.setJarByClass(FlowDriver.class);
 
+        //自定义分区
         setCalWay(CalWay.PARTITION, job);
         //如果不设置默认TextInputFormat
         job.setInputFormatClass(CombineTextInputFormat.class);
