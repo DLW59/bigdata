@@ -1,5 +1,8 @@
 package com.dlw.bigdata.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * author dlw
  * date 2018/10/4.
@@ -9,10 +12,15 @@ public class StaticTest {
 
     public static void main(String[] args) {
         new Inner().print();
+        String s1 = "123";
+        String s2 = "456";
+        String s3 = "hello" + s2;
+        List<String> list = new ArrayList<>();
+        list.add(s1);
     }
 
     public void print1() {
-        new Inner().print();
+//        new Inner().print();
         System.out.println(a++);
     }
 

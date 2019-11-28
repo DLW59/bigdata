@@ -29,6 +29,9 @@ public class WordCountDriver {
 
     private static final String INPUT = "hdfs://hadoopname:9000/wordcount/input/Stock.txt";
     private static final String OUTPUT = "hdfs://hadoopname:9000/wordcount/output";
+    //hadoop ha 测试
+    private static final String HA_INPUT = "hdfs://mycluster/wordcount/input";
+    private static final String HA_OUTPUT = "hdfs://mycluster/wordcount/output";
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);

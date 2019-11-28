@@ -10,6 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -24,6 +25,7 @@ public class RpcServerStartApplication {
         log.info("开始启动程序...");
 //        SpringApplication.run(RpcServerStartApplication.class, args);
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        AnnotationConfigApplicationContext context1 = new AnnotationConfigApplicationContext();
         Object serverRegister = context.getBean("serverRegister");
         ServerRegister sr = (ServerRegister) serverRegister;
         log.info(sr.toString());

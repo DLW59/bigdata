@@ -32,19 +32,22 @@ public class HdfsClient {
     Configuration conf = null;
     private static final String HADOOP_USER_NAME = "hadoop";
     private static final String URI = "hdfs://hadoopname:9000";
+
+    //hdfs ha
+    private static final String HA_URI = "hdfs://hadoopname2:9820";
     private void getFileSystem() throws Exception {
         conf = new Configuration();
 //        conf.set("dfs.replication","5");//配置副本数  代码优先级最高
 //        conf.set("fs.defaultFS", "hdfs://hadoop01:9000");
 //        fileSystem = FileSystem.get(conf);//默认获取一个本地文件系统
-        fileSystem = FileSystem.get(new URI(URI),conf,HADOOP_USER_NAME);//最后一个参数为用户名
+        fileSystem = FileSystem.get(new URI(HA_URI),conf,HADOOP_USER_NAME);//最后一个参数为用户名
     }
     public static void main(String[] args) throws Exception {
         HdfsClient hdfsClient = new HdfsClient();
         hdfsClient.getFileSystem();
-//        hdfsClient.mkdir();
+        hdfsClient.mkdir();
 //        hdfsClient.upload();
-        hdfsClient.ioUpload();
+//        hdfsClient.ioUpload();
 //        hdfsClient.remove();
 //        hdfsClient.printConf();
 //        hdfsClient.testCat();
@@ -64,12 +67,12 @@ public class HdfsClient {
      * 创建目录
      */
     private void mkdir() throws Exception {
-        boolean exists = fileSystem.exists(new Path("/demo/input"));
+        boolean exists = fileSystem.exists(new Path("/wordcount/input"));
         if (exists) {
             log.info("目录已经存在");
             return;
         }
-        boolean b = fileSystem.mkdirs(new Path("/demo/input"));
+        boolean b = fileSystem.mkdirs(new Path("/wordcount/input"));
         if (b) {
             log.info("在HDFS系统创建目录成功");
         }else {

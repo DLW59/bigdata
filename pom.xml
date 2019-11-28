@@ -27,6 +27,9 @@
         <module>hadoop</module>
         <module>storm</module>
         <module>netty</module>
+        <module>hive</module>
+        <module>log-source</module>
+        <module>web-click-mr-hive</module>
     </modules>
     <dependencies>
         <dependency>

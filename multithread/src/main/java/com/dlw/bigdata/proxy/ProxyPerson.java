@@ -7,6 +7,8 @@ import java.lang.reflect.Proxy;
 public class ProxyPerson {
 
 	public static void main(String[] args) {
+		//此属性是产生代理类class文件
+		System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
 		final MyPerson p = new MyPerson();
 		PersonInterface proxy = (PersonInterface) Proxy.newProxyInstance(MyPerson.class.getClassLoader(), MyPerson.class.getInterfaces(), new InvocationHandler() {
 
@@ -16,7 +18,8 @@ public class ProxyPerson {
 
 				if (method.getName() == "saySomeThing") {
 					System.out.println("say some thing is special handled.....");
-					p.saySomeThing();
+					method.invoke(p,args);
+//					p.saySomeThing();
 				} else {
 					Object invoke = method.invoke(p, args); // 调用任何public方法都拦截
 

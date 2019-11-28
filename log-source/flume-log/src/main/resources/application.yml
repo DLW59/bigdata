@@ -1,0 +1,13 @@
+server:
+  port: 20000
+spring:
+  application:
+    name: flume-log
+
+
+
+
+logging:
+  level:
+    flume: info
+  config: classpath:logback-spring.xml
