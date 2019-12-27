@@ -28,6 +28,7 @@ public class MultiLock implements Lock, Serializable {
             setState(permits);
         }
 
+        @Override
         protected final int tryAcquireShared(int arg) {
             for (;;) {
                 final int state = getState();
@@ -40,12 +41,13 @@ public class MultiLock implements Lock, Serializable {
 
         }
 
+        @Override
         protected final boolean tryReleaseShared(int arg) {
             for (;;) {
                 final int current = getState();
                 final int available = current + arg;
                 if (available < current) {
-                    throw new RuntimeException("查出最大许可数");
+                    throw new RuntimeException("超出最大许可数");
                 }
                 if (compareAndSetState(current, available)) {
                     return true;

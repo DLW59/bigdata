@@ -20,6 +20,7 @@ public class Mutex implements Lock, Serializable {
 
         private static final long serialVersionUID = 1868889894305990657L;
 
+        @Override
         public boolean tryAcquire(int acquires) {
             //acquires 必须为1 因为是互斥锁一次只能有一个线程获取到锁
             assert acquires == 1;
@@ -30,6 +31,7 @@ public class Mutex implements Lock, Serializable {
             return false;
         }
 
+        @Override
         protected boolean tryRelease(int releases) {
             assert releases == 1;
             if (getState() == 0) {
@@ -40,6 +42,7 @@ public class Mutex implements Lock, Serializable {
             return true;
         }
 
+        @Override
         protected boolean isHeldExclusively() {
             return getState() == 1;
          }

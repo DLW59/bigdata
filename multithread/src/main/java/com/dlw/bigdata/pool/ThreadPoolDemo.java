@@ -19,7 +19,7 @@ public class ThreadPoolDemo {
             }
         },"t1");
         t1.start();
-        t1.join();
+//        t1.join();
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -28,7 +28,7 @@ public class ThreadPoolDemo {
             }
         },"t2");
         t2.start();
-        t2.join();
+//        t2.join();
         System.out.println(local.get());
     }
 }
