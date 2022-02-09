@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <properties>
         <hadoop-hdfs-version>3.1.1</hadoop-hdfs-version>
-        <hadoop-common-version>3.1.1</hadoop-common-version>
+        <hadoop-common-version>3.1.4</hadoop-common-version>
         <hadoop-client-version>3.1.1</hadoop-client-version>
     </properties>
     <modules>
